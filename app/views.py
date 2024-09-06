@@ -67,7 +67,7 @@ class UserDetailsView(APIView):
 
 
 class ProductListCreateView(generics.ListCreateAPIView):
-    permission_classes = [IsAuthenticated]
+    # permission_classes = [IsAuthenticated]
 
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
