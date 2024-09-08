@@ -29,7 +29,7 @@ DEBUG = True
 SESSION_COOKIE_AGE = 3000
 SESSION_SAVE_EVERY_REQUEST = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost','127.0.0.1','.vercel.app']
 
 
 # Application definition
