@@ -29,6 +29,7 @@ DEBUG = True
 SESSION_COOKIE_AGE = 3000
 SESSION_SAVE_EVERY_REQUEST = True
 
+ALLOWED_HOSTS = ['.vercel.app']
 
 ALLOWED_HOSTS = ['127.0.0.1:8000', '.vercel.app']
 
