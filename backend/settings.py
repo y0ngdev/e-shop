@@ -29,9 +29,9 @@ DEBUG = True
 SESSION_COOKIE_AGE = 3000
 SESSION_SAVE_EVERY_REQUEST = True
 
-ALLOWED_HOSTS = ['.vercel.app']
+ALLOWED_HOSTS = ['*']
 
-ALLOWED_HOSTS = ['127.0.0.1:8000', '.vercel.app']
+# ALLOWED_HOSTS = ['127.0.0.1:8000', '.vercel.app']
 
 # Application definition
 
@@ -96,11 +96,11 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    },
-   	'production': {
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': BASE_DIR / 'db.sqlite3',
+    # },
+   	'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'verceldb',
         'USER': 'default',

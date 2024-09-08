@@ -34,8 +34,6 @@ customer_product_matrix_filled = customer_product_matrix.fillna(0)
 customer_similarity = cosine_similarity(customer_product_matrix_filled)
 
 # Function to predict ratings
-
-
 def predict_ratings(customer_id, product_id):
     customer_idx = customer_product_matrix.index.get_loc(customer_id)
     if product_id in customer_product_matrix:
@@ -68,8 +66,6 @@ product_features = preprocessor.transform(product_data)
 product_similarity = cosine_similarity(product_features)
 
 # Function to predict ratings based on content
-
-
 def predict_content_based(customer_id, product_id):
     customer_products = train_data[train_data['customer_id']
                                    == customer_id]['product_id']
@@ -92,8 +88,6 @@ def hybrid_predict(customer_id, product_id, alpha=0.5):
     return alpha * cf_pred + (1 - alpha) * cb_pred
 
 # Function to recommend top N products to a customer
-
-
 def recommend_products(customer_id, top_n=5):
     product_ids = product_data['product_id'].values
     predictions = [(pid, hybrid_predict(customer_id, pid))
@@ -115,6 +109,7 @@ def recommend(customer_id, top_n=5):
     output:
     list: ['I337046', 'I121056', 'I412481', 'I339732', 'I249424']
     '''
+
 
     rec = recommend_products(customer_id, top_n)
     recommendations = []
