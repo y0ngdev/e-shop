@@ -8,7 +8,6 @@ from .serializers import UserSerializer, UserDetailsSerializer
 from rest_framework import generics, status
 from .models import Product
 from .serializers import ProductSerializer
-from .recommender import recommend
 
 # Create your views here.
 
