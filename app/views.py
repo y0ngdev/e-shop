@@ -116,12 +116,3 @@ class BulkProductCreateAPI(APIView):
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-
-class RecommenderView(APIView):
-    permission_classes = [AllowAny]
-
-    def get(self, request, pk):
-        top_n = 9
-        recommended_products = recommend(pk, top_n)
-
-        return Response({'Top {top_n} products recommended for customer {pk}':  recommended_products}, status=status.HTTP_200_OK)
