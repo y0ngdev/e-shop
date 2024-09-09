@@ -36,6 +36,14 @@ SESSION_SAVE_EVERY_REQUEST = True
 
 ALLOWED_HOSTS = ['*']
 
+CORS_ALLOWED_ORIGINS = [
+    ".onrender.com",
+    "https://api.domain.com",
+    "http://localhost:5173",
+    "http://localhost",
+    "http://127.0.0.1"
+]
+
 # ALLOWED_HOSTS = ['127.0.0.1:8000', '.vercel.app']
 
 # Application definition
@@ -47,6 +55,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'corsheaders',
     'rest_framework',
     'rest_framework.authtoken',
     'app',
@@ -64,7 +73,8 @@ REST_FRAMEWORK = {
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-  	 'whitenoise.middleware.WhiteNoiseMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+   	'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -100,12 +110,9 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
-DATABASES = {
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.sqlite3',
-    #     'NAME': BASE_DIR / 'db.sqlite3',
-    # },
-   	'default': {
+if not DEBUG:
+    DATABASES = {
+    	'default': {
         'ENGINE': 'django.db.backends.postgresql',
             'NAME': os.getenv('DB_NAME'),
             'USER': os.getenv('DB_USER'),
@@ -113,6 +120,13 @@ DATABASES = {
             'HOST': os.getenv('DB_HOST'),  # Or your database host
             'PORT': os.getenv('DB_PORT'),       # Default PostgreSQL port
     }
+}
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    },
 }
 
 # Password validation

@@ -78,19 +78,19 @@ class Product(models.Model):
         ordering = ['id']
 
 
-# class Orders(models.Model):
+class Orders(models.Model):
 
-#     id = models.AutoField(primary_key=True)
-#     product = models.ForeignKey('Product', on_delete=models.DO_NOTHING)
-#     customer = models.ForeignKey('User', on_delete=models.DO_NOTHING)
-#     gender = models.CharField(max_length=10)
-#     age = models.IntegerField()
-#     category = models.CharField(max_length=50)
-#     quantity = models.IntegerField()
-#     price = models.DecimalField(max_digits=10, decimal_places=2)
-#     payment_method = models.CharField(max_length=20)
-#     invoice_date = models.DateField()
-#     shopping_mall = models.CharField(max_length=50)
+    id = models.AutoField(primary_key=True)
+    product = models.ForeignKey('Product', on_delete=models.DO_NOTHING)
+    customer = models.ForeignKey('User', on_delete=models.DO_NOTHING)
+    gender = models.CharField(max_length=10)
+    age = models.IntegerField()
+    category = models.CharField(max_length=50)
+    quantity = models.IntegerField()
+    price = models.DecimalField(max_digits=10, decimal_places=2)
+    payment_method = models.CharField(max_length=20)
+    invoice_date = models.DateField()
+    shopping_mall = models.CharField(max_length=50)
 
-#     class Meta:
-#         ordering = ['id']
+    class Meta:
+        ordering = ['id']
