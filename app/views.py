@@ -104,6 +104,7 @@ class ProductRetrieveUpdateDestroyView(generics.RetrieveUpdateDestroyAPIView):
 
 
 class BulkProductCreateAPI(APIView):
+    permission_classes = []
     def post(self, request, *args, **kwargs):
         products_data = request.data
 
