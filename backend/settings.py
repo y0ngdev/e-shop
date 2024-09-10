@@ -120,7 +120,7 @@ if not DEBUG:
             'HOST': os.getenv('DB_HOST'),  # Or your database host
             'PORT': os.getenv('DB_PORT'),       # Default PostgreSQL port
     }
-}
+    }
 
 DATABASES = {
     'default': {
