@@ -4,9 +4,9 @@
 # from rest_framework.authtoken.models import Token
 
 
-# class SessionTimeoutMiddleware:
-#     def __init__(self, get_response):
-#         self.get_response = get_response
+class SessionTimeoutMiddleware:
+    def __init__(self, get_response):
+        self.get_response = get_response
 
 #     def __call__(self, request):
 
