@@ -37,11 +37,13 @@ SESSION_SAVE_EVERY_REQUEST = True
 ALLOWED_HOSTS = ['*']
 
 CORS_ALLOWED_ORIGINS = [
-    ".onrender.com",
-    ".vercel.app",
     "http://localhost:5173",
     "http://localhost",
     "http://127.0.0.1"
+]
+CORS_ALLOWED_ORIGIN_REGEXES = [
+    r"^https:\/\/.*\.vercel\.app$",
+    r"^https:\/\/.*\.onrender\.com$",
 ]
 
 # ALLOWED_HOSTS = ['127.0.0.1:8000', '.vercel.app']
