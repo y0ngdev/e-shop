@@ -36,6 +36,12 @@ SESSION_SAVE_EVERY_REQUEST = True
 
 ALLOWED_HOSTS = ['*']
 
+CSRF_TRUSTED_ORIGINS = [
+    'chrome-extension://amknoiejhlmhancpahfcfcfhllgkpbld',
+    "http://localhost:5173",
+    "http://localhost",
+    "http://127.0.0.1"
+]
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
     "http://localhost",
