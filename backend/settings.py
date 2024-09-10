@@ -28,7 +28,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-@jyy*h^%r&!bazne^ut6er8@e5y_41uz4r-p)x7ea5#pru#6(g'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 # Set session timeout (e.g., 30 minutes)
 SESSION_COOKIE_AGE = 3000
